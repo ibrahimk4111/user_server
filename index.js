@@ -24,12 +24,13 @@ const client = new MongoClient(uri, {
 async function run() {
   try {
     await client.connect();
+    console.log("DB_connected");
     const database = client.db("test").collection("devices");
 
     app.get("/", (req, res) => {
       res.send("Hello User Server go for /users");
     });
-
+    // Here soldslafjalsdjfl asdf
     //Getting data from MongoDB
     app.get("/users", async (req, res) => {
       const dataList = database.find({});
